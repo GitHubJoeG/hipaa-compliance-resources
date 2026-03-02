@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIPAA Compliance Guide for Small Healthcare Practices (2026) | Free Resource</title>
+    <meta name="description" content="Complete HIPAA compliance guide for small healthcare practices. Learn about Security Risk Analysis, staff training, policies, Business Associate Agreements, and more.">
+    <meta name="keywords" content="HIPAA compliance, small practice, healthcare compliance, HIPAA guide, security risk analysis, HIPAA training, business associate agreement, PHI protection">
+    <meta name="author" content="Joe Gellatly">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hipaa-compliance-guide.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HIPAA Compliance Guide for Small Healthcare Practices (2026)">
+    <meta property="og:description" content="Free, comprehensive guide to HIPAA compliance for small practices. Covers SRA, training, policies, BAAs, and more.">
+    <meta property="og:type" content="article">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "HIPAA Compliance Guide for Small Healthcare Practices (2026)",
+      "author": {
+        "@type": "Person",
+        "name": "Joe Gellatly",
+        "jobTitle": "CEO",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Medcurity",
+          "url": "https://medcurity.com"
+        }
+      },
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "description": "Complete HIPAA compliance guide for small healthcare practices covering Security Risk Analysis, training, policies, BAAs, and enforcement.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "HIPAA Compliance Resource Center"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is HIPAA compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HIPAA compliance means meeting the requirements of the Health Insurance Portability and Accountability Act, including the Privacy Rule, Security Rule, and Breach Notification Rule. It requires healthcare organizations to protect patient health information through administrative, physical, and technical safeguards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does HIPAA compliance cost for a small practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HIPAA compliance for small practices (1-10 employees) typically costs $5,000-$25,000 annually, covering risk assessments, staff training, policy development, technical safeguards, and compliance software. Using compliance platforms can reduce costs by 50-70% compared to fully outsourced programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a HIPAA Security Risk Analysis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A HIPAA Security Risk Analysis (SRA) is a systematic evaluation of all systems that create, store, or transmit electronic protected health information (ePHI). It identifies threats, vulnerabilities, and current safeguards, then determines risk levels and remediation plans. It is required under the HIPAA Security Rule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often is HIPAA training required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HIPAA requires ongoing security awareness and training. Annual training is the industry standard and what most OCR auditors expect. Additional training should occur during new hire onboarding, after policy changes, following security incidents, and when employees change roles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Business Associate Agreement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Business Associate Agreement (BAA) is a legally binding contract between a HIPAA-covered entity and a vendor who handles protected health information. It specifies how the vendor will protect patient data, report breaches, and return or destroy PHI when the relationship ends."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #1a5276;
+            --primary-light: #2980b9;
+            --accent: #27ae60;
+            --text: #2c3e50;
+            --text-light: #5d6d7e;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --bg-dark: #1a2332;
+            --border: #e8ecf0;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--bg);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 3rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .toc {
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .toc-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .toc h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .toc-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .toc-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            background: white;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .toc-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type { border-bottom: none; }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        p { margin-bottom: 1rem; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #eaf2f8, #d4efdf);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+
+        .warning-box {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #e67e22;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.6rem 0 0.6rem 2rem;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .checklist li:last-child { border-bottom: none; }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Resource Links */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .resource-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .resource-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .resource-card .source {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+        }
+
+        .resource-card .title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .resource-card .desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Penalty Table */
+        .penalty-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .penalty-table th {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .penalty-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .penalty-table tr:nth-child(even) { background: var(--bg-alt); }
+
+        /* Author Box */
+        .author-box {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info h3 { margin-top: 0; }
+        .author-info p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 0.5rem; }
+        .author-info a { color: var(--primary); }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        footer a { color: rgba(255,255,255,0.9); }
+
+        footer .disclaimer {
+            font-size: 0.8rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .author-box { flex-direction: column; align-items: center; text-align: center; }
+            .toc-links { justify-content: center; }
+            .penalty-table { font-size: 0.8rem; }
+            .penalty-table th, .penalty-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">Free Resource &mdash; Updated February 2026</div>
+    <h1>The Complete HIPAA Compliance Guide for Small Healthcare Practices</h1>
+    <p>Everything you need to know about protecting patient data, meeting federal requirements, and building a compliance program that actually works.</p>
+</header>
+
+<nav class="toc">
+    <div class="toc-inner">
+        <h2>Jump to Section</h2>
+        <div class="toc-links">
+            <a href="#overview">Overview</a>
+            <a href="#who-must-comply">Who Must Comply</a>
+            <a href="#sra">Risk Analysis</a>
+            <a href="#privacy">Privacy Rule</a>
+            <a href="#security">Security Rule</a>
+            <a href="#training">Training</a>
+            <a href="#baa">BAAs</a>
+            <a href="#breach">Breach Response</a>
+            <a href="#penalties">Penalties</a>
+            <a href="#resources">Resources</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+<section id="overview">
+    <h2>What is HIPAA Compliance?</h2>
+    <p>The Health Insurance Portability and Accountability Act (HIPAA) is the primary federal law governing how healthcare organizations protect patient information. Signed into law in 1996 and expanded through subsequent rules, HIPAA establishes national standards for the privacy, security, and electronic exchange of health information.</p>
+
+    <p>HIPAA compliance isn't a one-time certification or a single checklist to complete. It's an ongoing operational commitment that requires systematic attention to how your practice handles protected health information (PHI) in every form&mdash;electronic, paper, and verbal.</p>
+
+    <div class="highlight-box">
+        <strong>The Three Main HIPAA Rules</strong>
+        The <strong>Privacy Rule</strong> governs how PHI can be used and disclosed. The <strong>Security Rule</strong> establishes safeguards for electronic PHI. The <strong>Breach Notification Rule</strong> requires reporting when PHI is compromised. Together, they form the foundation of healthcare data protection in the United States.
+    </div>
+
+    <p>For small practices, HIPAA compliance can feel overwhelming. But the fundamentals are straightforward: know what data you have, protect it properly, train your staff, manage your vendors, and have a plan for when things go wrong. This guide walks you through each component step by step.</p>
+</section>
+
+<section id="who-must-comply">
+    <h2>Who Must Comply with HIPAA?</h2>
+
+    <h3>Covered Entities</h3>
+    <p>HIPAA directly applies to three types of organizations known as "covered entities":</p>
+    <ul class="checklist">
+        <li><strong>Healthcare Providers</strong> who transmit health information electronically&mdash;physicians, hospitals, clinics, dentists, chiropractors, nursing homes, pharmacies, and mental health providers</li>
+        <li><strong>Health Plans</strong> including health insurance companies, HMOs, employer-sponsored health plans, Medicare, and Medicaid</li>
+        <li><strong>Healthcare Clearinghouses</strong> that process nonstandard health information into standard formats</li>
+    </ul>
+
+    <h3>Business Associates</h3>
+    <p>Any person or entity that creates, receives, maintains, or transmits PHI on behalf of a covered entity must also comply with HIPAA. This includes IT vendors, billing companies, cloud service providers, consultants, attorneys handling patient data, answering services, and shredding companies.</p>
+
+    <div class="warning-box">
+        <strong>Common Misconception</strong>
+        Many dental offices, chiropractic practices, and small clinics incorrectly believe HIPAA doesn't fully apply to them. If you transmit electronic claims to insurance companies&mdash;which virtually all practices do&mdash;you are a covered entity and must comply with all HIPAA requirements.
+    </div>
+</section>
+
+<section id="sra">
+    <h2>The Security Risk Analysis (SRA)</h2>
+    <p>The Security Risk Analysis is the single most important compliance activity for any healthcare organization. It's also the most common deficiency found during HHS Office for Civil Rights (OCR) investigations. Under <a href="https://www.hhs.gov/hipaa/for-professionals/security/guidance/guidance-risk-analysis/index.html" target="_blank" rel="noopener">45 CFR 164.308(a)(1)</a>, every covered entity and business associate must conduct a thorough, organization-wide risk analysis.</p>
+
+    <h3>What the SRA Requires</h3>
+    <ul class="checklist">
+        <li><strong>Asset Inventory:</strong> Identify every system that creates, stores, or transmits ePHI&mdash;EHR systems, practice management software, imaging systems, email, cloud storage, laptops, mobile devices, and backup systems</li>
+        <li><strong>Threat Identification:</strong> Evaluate potential threats to each system including cyber attacks, ransomware, insider threats, natural disasters, equipment failure, and human error</li>
+        <li><strong>Vulnerability Assessment:</strong> Identify weaknesses in your current security controls that could be exploited by identified threats</li>
+        <li><strong>Current Safeguard Evaluation:</strong> Document existing security measures and assess their effectiveness</li>
+        <li><strong>Risk Determination:</strong> Rate the likelihood and impact of each identified risk to prioritize remediation efforts</li>
+        <li><strong>Remediation Planning:</strong> Create specific, actionable plans to address identified risks with assigned responsibilities and timelines</li>
+    </ul>
+
+    <div class="highlight-box">
+        <strong>How Often Should You Conduct an SRA?</strong>
+        While HIPAA doesn't specify a frequency, conducting your SRA annually is the widely accepted standard and what OCR auditors expect. You should also update your analysis whenever significant changes occur&mdash;new systems, office moves, major staffing changes, or security incidents.
+    </div>
+
+    <h3>SRA Resources</h3>
+    <div class="resource-grid">
+        <a href="https://www.healthit.gov/topic/privacy-security-and-hipaa/security-risk-assessment-tool" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">HHS / ONC</div>
+            <div class="title">Security Risk Assessment Tool</div>
+            <div class="desc">Free downloadable tool from the federal government to help small and medium practices conduct their SRA.</div>
+        </a>
+        <a href="https://medcurity.com/sra" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">Medcurity</div>
+            <div class="title">Guided Security Risk Analysis Platform</div>
+            <div class="desc">Cloud-based platform that walks organizations through a structured, comprehensive risk analysis process.</div>
+        </a>
+        <a href="https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">HHS.gov</div>
+            <div class="title">HIPAA Security Rule Guidance</div>
+            <div class="desc">Official guidance materials from the Department of Health and Human Services on Security Rule implementation.</div>
+        </a>
+    </div>
+</section>
+
+<section id="privacy">
+    <h2>The HIPAA Privacy Rule</h2>
+    <p>The Privacy Rule establishes national standards for when and how protected health information can be used and disclosed. It applies to PHI in all forms&mdash;electronic, paper, and oral.</p>
+
+    <h3>What is Protected Health Information (PHI)?</h3>
+    <p>PHI is any individually identifiable health information created, received, maintained, or transmitted by a covered entity. HIPAA defines 18 specific identifiers that, when linked to health information, constitute PHI:</p>
+    <p>Names, geographic data smaller than a state, dates related to an individual, phone numbers, fax numbers, email addresses, Social Security numbers, medical record numbers, health plan beneficiary numbers, account numbers, certificate/license numbers, vehicle identifiers, device identifiers, web URLs, IP addresses, biometric identifiers, full-face photographs, and any other unique identifying number or code.</p>
+
+    <h3>Key Privacy Rule Requirements</h3>
+    <ul class="checklist">
+        <li><strong>Notice of Privacy Practices (NPP):</strong> Provide patients with a clear description of how their information may be used and their rights regarding their data</li>
+        <li><strong>Minimum Necessary Standard:</strong> Limit PHI disclosures to only what's necessary for the intended purpose (with exceptions for treatment, patient access, HHS investigations, and authorized disclosures)</li>
+        <li><strong>Patient Rights:</strong> Honor patient rights to access their records, request amendments, receive an accounting of disclosures, and request restrictions on certain uses</li>
+        <li><strong>Privacy Officer:</strong> Designate a Privacy Officer responsible for developing and implementing privacy policies</li>
+        <li><strong>Workforce Training:</strong> Train all workforce members on your privacy policies and procedures</li>
+    </ul>
+
+    <p>For detailed Privacy Rule guidance, visit the <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/index.html" target="_blank" rel="noopener">HHS Privacy Rule page</a>.</p>
+</section>
+
+<section id="security">
+    <h2>The HIPAA Security Rule</h2>
+    <p>The Security Rule specifically addresses electronic PHI (ePHI) and requires three categories of safeguards:</p>
+
+    <h3>Administrative Safeguards</h3>
+    <ul class="checklist">
+        <li>Security Risk Analysis and management process</li>
+        <li>Designated Security Officer</li>
+        <li>Workforce security procedures (background checks, access authorization)</li>
+        <li>Security awareness and training program</li>
+        <li>Security incident procedures</li>
+        <li>Contingency plan (data backup, disaster recovery, emergency operations)</li>
+        <li>Evaluation of security controls</li>
+        <li>Business Associate Agreements</li>
+    </ul>
+
+    <h3>Physical Safeguards</h3>
+    <ul class="checklist">
+        <li>Facility access controls (locks, badges, visitor logs)</li>
+        <li>Workstation use policies (screen positioning, clean desk policy)</li>
+        <li>Workstation security (physical access controls for devices)</li>
+        <li>Device and media controls (disposal, re-use, movement tracking)</li>
+    </ul>
+
+    <h3>Technical Safeguards</h3>
+    <ul class="checklist">
+        <li><strong>Access Controls:</strong> Unique user IDs, emergency access procedures, automatic logoff, encryption</li>
+        <li><strong>Audit Controls:</strong> Hardware, software, and procedural mechanisms to record and examine access</li>
+        <li><strong>Integrity Controls:</strong> Measures to protect ePHI from unauthorized alteration or destruction</li>
+        <li><strong>Transmission Security:</strong> Encryption for ePHI transmitted over electronic networks (TLS 1.2+)</li>
+    </ul>
+
+    <div class="highlight-box">
+        <strong>Required vs. Addressable</strong>
+        The Security Rule classifies safeguards as "Required" (must implement) or "Addressable" (must assess and implement if reasonable, or document why an alternative was chosen). Addressable does NOT mean optional&mdash;you must still evaluate each safeguard and document your decision.
+    </div>
+</section>
+
+<section id="training">
+    <h2>HIPAA Training Requirements</h2>
+    <p>HIPAA requires ongoing security awareness and training for all workforce members who have access to PHI. While the regulation doesn't specify an exact frequency, annual training has become the industry standard and is what OCR auditors expect.</p>
+
+    <h3>When Training is Required</h3>
+    <ul class="checklist">
+        <li><strong>Annual refresher training</strong> for all existing workforce members</li>
+        <li><strong>New hire onboarding</strong> before the employee handles any PHI</li>
+        <li><strong>Role changes</strong> when employees transition to positions with different PHI access</li>
+        <li><strong>Policy or system changes</strong> when new technology or updated procedures affect PHI handling</li>
+        <li><strong>After security incidents</strong> to prevent recurrence and reinforce proper procedures</li>
+    </ul>
+
+    <h3>What Training Should Cover</h3>
+    <p>Effective HIPAA training goes beyond generic regulatory overviews. It should be tailored to your organization's specific systems, workflows, and risks. Key topics include your organization's privacy and security policies, proper PHI handling procedures, access control practices, incident reporting procedures, social engineering and phishing awareness, and device security requirements.</p>
+
+    <h3>Documentation</h3>
+    <p>Maintain records of all training activities including who attended, when training occurred, what content was covered, and evidence of completion (sign-off sheets, quiz scores, certificates). This documentation is essential during OCR audits.</p>
+
+    <div class="resource-grid">
+        <a href="https://medcurity.com/hipaa-training" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">Medcurity</div>
+            <div class="title">HIPAA Training Program</div>
+            <div class="desc">Structured training programs designed to meet HIPAA requirements while keeping staff properly educated on current threats.</div>
+        </a>
+        <a href="https://www.hhs.gov/hipaa/for-professionals/training/index.html" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">HHS.gov</div>
+            <div class="title">Official HIPAA Training Materials</div>
+            <div class="desc">Free training resources from the Department of Health and Human Services for covered entities and business associates.</div>
+        </a>
+    </div>
+</section>
+
+<section id="baa">
+    <h2>Business Associate Agreements (BAAs)</h2>
+    <p>A Business Associate Agreement is a legally binding contract between your practice (the covered entity) and any vendor who has access to PHI. Under HIPAA, you cannot share PHI with a vendor without a signed BAA in place.</p>
+
+    <h3>Common Business Associates</h3>
+    <ul class="checklist">
+        <li>EHR/practice management software providers</li>
+        <li>IT support and managed service providers</li>
+        <li>Cloud hosting and backup service providers</li>
+        <li>Medical billing and coding companies</li>
+        <li>Answering and appointment reminder services</li>
+        <li>Email providers (if used for PHI)</li>
+        <li>Document shredding companies</li>
+        <li>Attorneys and accountants handling patient data</li>
+        <li>Transcription services</li>
+    </ul>
+
+    <h3>What BAAs Must Include</h3>
+    <p>Effective BAAs specify permitted uses and disclosures of PHI, require appropriate safeguards, establish breach notification requirements, define terms for PHI return or destruction, grant audit rights, and address subcontractor requirements. The <a href="https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html" target="_blank" rel="noopener">HHS provides sample BAA provisions</a> that can serve as a starting template.</p>
+
+    <div class="warning-box">
+        <strong>Don't Forget These Vendors</strong>
+        Organizations frequently miss BAAs with less obvious vendors: answering services, building maintenance companies with access to areas containing PHI, payment processors, consultant firms, and even marketing companies that receive patient testimonials or before/after photos.
+    </div>
+</section>
+
+<section id="breach">
+    <h2>Breach Notification Requirements</h2>
+    <p>The HIPAA Breach Notification Rule (45 CFR 164.400-414) requires covered entities to notify affected individuals, HHS, and sometimes the media when unsecured PHI is breached.</p>
+
+    <h3>Notification Timeline</h3>
+    <p>Notifications must be sent without unreasonable delay and no later than <strong>60 calendar days</strong> after discovering the breach. For breaches affecting 500 or more individuals, you must simultaneously notify the HHS Secretary and prominent media outlets serving the affected area.</p>
+
+    <h3>What to Include in Breach Notifications</h3>
+    <ul class="checklist">
+        <li>Description of what happened and when</li>
+        <li>Types of information involved (names, SSNs, diagnoses, etc.)</li>
+        <li>Steps individuals should take to protect themselves</li>
+        <li>What your organization is doing to investigate and mitigate</li>
+        <li>Contact information for questions</li>
+    </ul>
+
+    <p>The HHS maintains a public <a href="https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf" target="_blank" rel="noopener">Breach Portal</a> (commonly known as the "Wall of Shame") listing all breaches affecting 500 or more individuals. Appearing on this list carries significant reputational consequences.</p>
+
+    <div class="highlight-box">
+        <strong>Be Prepared Before a Breach Occurs</strong>
+        The worst time to develop your incident response plan is during an active breach. Build your procedures, draft notification templates, identify your response team, and practice your process before you need it. Compliance platforms like <a href="https://medcurity.com" target="_blank" rel="noopener">Medcurity</a> include incident response planning tools to help you prepare.
+    </div>
+</section>
+
+<section id="penalties">
+    <h2>HIPAA Violation Penalties</h2>
+    <p>HIPAA violations carry significant financial penalties, enforced by the HHS Office for Civil Rights:</p>
+
+    <table class="penalty-table">
+        <thead>
+            <tr>
+                <th>Tier</th>
+                <th>Level of Culpability</th>
+                <th>Penalty per Violation</th>
+                <th>Annual Maximum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Tier 1</strong></td>
+                <td>Lack of knowledge</td>
+                <td>$137 &ndash; $68,928</td>
+                <td>$68,928</td>
+            </tr>
+            <tr>
+                <td><strong>Tier 2</strong></td>
+                <td>Reasonable cause</td>
+                <td>$1,379 &ndash; $68,928</td>
+                <td>$68,928</td>
+            </tr>
+            <tr>
+                <td><strong>Tier 3</strong></td>
+                <td>Willful neglect (corrected)</td>
+                <td>$13,785 &ndash; $68,928</td>
+                <td>$68,928</td>
+            </tr>
+            <tr>
+                <td><strong>Tier 4</strong></td>
+                <td>Willful neglect (not corrected)</td>
+                <td>$68,928 &ndash; $2,067,813</td>
+                <td>$2,067,813</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Beyond OCR fines, violations can result in state attorney general enforcement actions, class-action lawsuits, criminal penalties (including imprisonment for willful violations), and corrective action plans requiring years of monitored compliance.</p>
+
+    <p>For a complete list of recent HIPAA enforcement actions, visit the <a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/index.html" target="_blank" rel="noopener">OCR Resolution Agreements page</a>.</p>
+</section>
+
+<section id="resources">
+    <h2>Essential HIPAA Resources</h2>
+    <p>These authoritative resources provide additional guidance for building and maintaining your HIPAA compliance program:</p>
+
+    <div class="resource-grid">
+        <a href="https://www.hhs.gov/hipaa/index.html" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">U.S. Dept. of Health & Human Services</div>
+            <div class="title">Official HIPAA Information</div>
+            <div class="desc">The authoritative source for HIPAA regulations, guidance, and enforcement information.</div>
+        </a>
+        <a href="https://medcurity.com" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">Medcurity</div>
+            <div class="title">HIPAA Compliance Platform</div>
+            <div class="desc">All-in-one platform for Security Risk Analysis, training, policies, vendor management, and compliance tracking.</div>
+        </a>
+        <a href="https://www.nist.gov/privacy-framework/nist-sp-800-66" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">NIST</div>
+            <div class="title">NIST SP 800-66 (HIPAA Security Rule Guide)</div>
+            <div class="desc">NIST's implementation guide mapping HIPAA Security Rule requirements to practical security controls.</div>
+        </a>
+        <a href="https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">HHS OCR</div>
+            <div class="title">HIPAA Breach Portal</div>
+            <div class="desc">Public database of reported healthcare data breaches affecting 500+ individuals.</div>
+        </a>
+        <a href="https://www.cms.gov/medicare/regulations-guidance/hipaa" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">CMS.gov</div>
+            <div class="title">CMS HIPAA Resources</div>
+            <div class="desc">Centers for Medicare & Medicaid Services guidance on HIPAA administrative simplification provisions.</div>
+        </a>
+        <a href="https://www.healthit.gov/topic/privacy-security-and-hipaa" target="_blank" rel="noopener" class="resource-card">
+            <div class="source">HealthIT.gov</div>
+            <div class="title">Privacy, Security, and HIPAA</div>
+            <div class="desc">Resources on health IT privacy and security from the Office of the National Coordinator for Health IT.</div>
+        </a>
+    </div>
+</section>
+
+<div class="author-box">
+    <div class="author-avatar">JG</div>
+    <div class="author-info">
+        <h3>About the Author</h3>
+        <p><strong>Joe Gellatly</strong> is the CEO of <a href="https://medcurity.com" target="_blank" rel="noopener">Medcurity</a>, a HIPAA compliance platform that helps healthcare organizations systematically manage their compliance programs. With years of experience helping practices navigate HIPAA requirements, Joe is dedicated to making compliance accessible and practical for organizations of all sizes.</p>
+        <p>Have questions? Reach out at <a href="https://medcurity.com/contact" target="_blank" rel="noopener">medcurity.com/contact</a></p>
+    </div>
+</div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 HIPAA Compliance Resource Center. Created by <a href="https://medcurity.com" target="_blank" rel="noopener">Medcurity</a>.</p>
+    <p class="disclaimer">This guide is provided for informational purposes only and does not constitute legal advice. HIPAA requirements are complex and organizations should consult with qualified compliance professionals for guidance specific to their situation. For official HIPAA regulations, visit <a href="https://www.hhs.gov/hipaa" target="_blank" rel="noopener">HHS.gov/HIPAA</a>.</p>
+</footer>
+
+</body>
+</html>
